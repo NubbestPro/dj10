@@ -20,6 +20,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        {% for job in jobs %}
+                        <div class="col">
+                            <div class="card shadow-sm">
+                            <img src="{{ job.image.url }}">
+
+                            <div class="card-body">
+                            <p class="card-text">
+                                {{ job.summary }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
 
                     <a class="nav-link" href="https://github.com/NubbestPro" target="_blank">Github</a>
                     <a class="nav-link" href="#">Resume</a>
@@ -36,7 +51,23 @@
         </h1>
         <h2>Latest Post</h2>
         <hr>
-        <h2>{{ blogs }}</h2>
+        <h2>
+            <div class="navbar-nav ms-auto">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        {% for blog in blogs %}
+                        <div class="col">
+                            <div class="card shadow-sm">
+                            <img src="{{ blog.image.url }}">
+
+                            <div class="card-body">
+                            <p class="card-text">
+                                {{ blog.body }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+        </h2>
     </div>
 
 
